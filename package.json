@@ -1,0 +1,19 @@
+{
+  "name": "lazyloading",
+  "version": "1.0.0",
+  "description": "implement lazy loading",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "lazyLoading"
+  ],
+  "author": "Omar",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
