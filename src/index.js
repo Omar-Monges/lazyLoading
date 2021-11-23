@@ -1,7 +1,18 @@
-const app = document.querySelector('#mount-js')
-function getImg(){
-    const img = document.createElement('img')
-    img.src = 'https://source.unsplash.com/random'
-    img.classList.add('addImg')
-    app.appendChild(img)
+// Point mount and API
+const app = document.querySelector('#mount-js'),
+    API = 'https://randomfox.ca/floof/'
+function createImageNode(source){
+    const imgNodo = document.createElement('img'),
+        container = document.createElement('div')
+    imgNodo.classList.add('addImg')
+    imgNodo.src = source
+    container.appendChild(imgNodo)
+    return container
+}
+const getImg = async () => {
+    const response = await fetch(API),
+        dataJson = await response.json()
+    const image = createImageNode(dataJson.image)
+    app.appendChild(image)
+
 }
