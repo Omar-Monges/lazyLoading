@@ -1,3 +1,4 @@
+import { registerImg } from "./lazy.js"
 // Point mount and API
 const app = document.querySelector('#mount-js'),
     API = 'https://randomfox.ca/floof/'
@@ -14,5 +15,7 @@ const getImg = async () => {
         dataJson = await response.json()
     const image = createImageNode(dataJson.image)
     app.appendChild(image)
-
+    registerImg(image)
 }
+const btn = document.querySelector('#loadButtom')
+btn.addEventListener('click', getImg)
