@@ -1,21 +1,13 @@
 import { registerImg } from "./lazy.js"
+import { createImageNode } from "./utils.js"
 // Point mount and API
 const app = document.querySelector('#mount-js'),
     API = 'https://randomfox.ca/floof/'
-function createImageNode(source){
-    const imgNodo = document.createElement('img'),
-        container = document.createElement('div')
-    imgNodo.className = 'addImg wrapper'
-    imgNodo.dataset.src = source
-    // container.classList.add('wrapper')
-    container.appendChild(imgNodo)
-    return container
-}
 const getImg = async () => {
     const response = await fetch(API),
         dataJson = await response.json()
-    const image = createImageNode(dataJson.image)
-    app.appendChild(image)
+    const [wrapper, image] = createImageNode(dataJson.image)
+    app.appendChild(wrapper)
     registerImg(image)
 }
 const btn = document.querySelector('#loadButtom')
