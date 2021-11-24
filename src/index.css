@@ -34,8 +34,10 @@ main{
 .addImg{
   display: inline-block;
   margin: 5px 0;
-  min-width: 320px;
-  max-width: 400px;
+  width: 320px;
   min-height: 320px;
-  max-height: 400px;
+  max-height: auto;
+}
+.wrapper {
+  background-color: #f8e255;
 }

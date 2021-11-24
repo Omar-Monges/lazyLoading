@@ -5,8 +5,9 @@ const app = document.querySelector('#mount-js'),
 function createImageNode(source){
     const imgNodo = document.createElement('img'),
         container = document.createElement('div')
-    imgNodo.classList.add('addImg')
-    imgNodo.src = source
+    imgNodo.className = 'addImg wrapper'
+    imgNodo.dataset.src = source
+    // container.classList.add('wrapper')
     container.appendChild(imgNodo)
     return container
 }
