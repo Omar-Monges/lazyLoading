@@ -1,3 +1,8 @@
+// function removeAnimations(nodo){
+//   for (let i = 0; i < 3; i++) {
+//     nodo.removeChild(nodo.firstChild)
+//   }
+// }
 
 const observer = new IntersectionObserver((entries) => {
   const nodo = entries[0]
@@ -6,6 +11,9 @@ const observer = new IntersectionObserver((entries) => {
     //load image
     img.src = img.dataset.src
     img.onload = () => {
+      console.log('Tenemos q borrar')
+      // removeAnimations(img.parentElement)
+      img.previousElementSibling.remove()
       img.parentElement.className = ''
     }
     // container.classList.remove('wrapper')
